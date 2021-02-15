@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="start-now-container">
+  <p class="start-now-title">Want to join? Start now!</p>
+  <form class="user-form" action="/start-now">
+    <input class="form-input" type="text" name="first-name" placeholder="Name *"><br>
+    <input class="form-input" type="text" name="email" placeholder="Email *"><br>
+    <input class="form-input" type="text" name="subject" placeholder="Subject *"><br>
+    <input class="form-input" type="textarea" name="first-name" placeholder="Query *"><br>
+    <input type="submit" value="Start Now">
+  </form>
+</div>
+{% endblock %}

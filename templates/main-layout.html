@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  
+  <title>Crypto Logistics</title>
+</head>
+<body>
+  <div id="page-container">
+    <div id="content-wrap" class="container">
+      <div class="nav-image">
+        <nav class="nav">
+          <h1 class="nav-brand">Crypto Logistics</h1>
+
+          <div class="nav-links">
+            <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+            <a href="{{ url_for('start_now') }}" class="nav-link">Start Now</a>
+          </div>
+
+          <div class="nav-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </nav>
+
+        <div class="options-container">
+          <div class="option">
+            <p class="option-title">Standard Package</p>
+            <p class="option-description">Long Term Trading</p>
+            <hr class="option-row">
+            <ul class="option-features">
+              <li>1 to 1 support</li>
+              <li>Quality over quantity</li>
+              <li>9am - 5pm availability</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <hr class="option-row">
+            <div class="option-price-container">
+              <p class="option-price">£19.99</p>
+            </div>
+          </div>
+          <div class="option">
+            <p class="option-title">Platinum Package</p>
+            <p class="option-description">Long & Short Term Trading</p>
+            <hr class="option-row">
+            <ul class="option-features">
+              <li>1 to 1 support</li>
+              <li>Quality over quantity</li>
+              <li>9am - 5pm availability</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <hr class="option-row">
+            <div class="option-price-container">
+              <p class="option-price">£29.99</p>
+            </div>
+          </div>
+          <div class="option">
+            <p class="option-title">Full-Mentorship</p>
+            <p class="option-description">Long & Short Term Trading</p>
+            <hr class="option-row">
+            <ul class="option-features">
+              <li>1 to 1 support</li>
+              <li>Quality over quantity</li>
+              <li>24/7 availability</li>
+              <li>Full mentorship</li>
+              <li>Important notes, tips & tricks</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <hr class="option-row">
+            <div class="option-price-container">
+              <p class="option-price">£49.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% block content %} {% endblock %}
+    </div>
+
+    <footer id="footer">
+      <p>This is the footer content</p>
+    </footer>
+  </div>
+</body>
+</html>

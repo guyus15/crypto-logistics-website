@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="contact-container">
+  <p class="contact-title">Got a question? We're here to help!</p>
+  <form class="user-form" action="/submit-query" method="POST">
+    <input class="form-input" type="text" name="first-name" placeholder="Name *"><br>
+    <input class="form-input" type="text" name="email" placeholder="Email *"><br>
+    <input class="form-input" type="text" name="subject" placeholder="Subject *"><br>
+    <input class="form-input" type="textarea" name="first-name" placeholder="Query *"><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}

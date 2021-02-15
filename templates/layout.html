@@ -11,13 +11,14 @@
 </head>
 <body>
   <div id="page-container">
+    <div id="content-wrap" class="container">
     <nav class="nav">
       <h1 class="nav-brand">Crypto Logistics</h1>
 
       <div class="nav-links">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">Contact</a>
-        <a href="#" class="nav-link">Start Now</a>
+        <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+        <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+        <a href="{{ url_for('start_now') }}" class="nav-link">Start Now</a>
       </div>
 
       <div class="nav-burger">
@@ -25,10 +26,9 @@
         <div class="line"></div>
         <div class="line"></div>
       </div>
-    </nav>
-    <div id="content-wrap" class="container">
-      {% block content %} {% endblock %}
     </div>
+    
+    {% block content %} {% endblock %}
 
     <footer id="footer">
       <p>This is the footer content</p>
