@@ -20,5 +20,9 @@ def submit_query():
 def start_now():
   return render_template("start-now.html")
 
+@app.route('/terms-and-conditions')
+def t_and_c():
+  return render_template("t&cs.html")
+
 if __name__ == "__main__":
-  app.run(debug)
+  app.run()
