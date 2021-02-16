@@ -1,37 +1,39 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="start-now-container">
-  <p class="start-now-title">Want to join? Start now!</p>
-  <form class="user-form" action="/start-now">
-    <input class="form-input" type="text" name="name" placeholder="Name *"><br>
-    <input class="form-input" type="text" name="email" placeholder="Email *"><br>
-    <select id="items">
-      <option value="item-1">Standard Package</option>
-      <option value="item-2">Platinum Package</option>
-      <option value="item-3">Full-Mentorship Package</option>
-    </select>
-  </form>
-  <div id="paypal-button-container"></div>
-  <script src="https://www.paypal.com/sdk/js?client-id=AVznN8KV3QGXYA88LymkE-BH1du9GRPtvKsAuTncB1hBpHGAfpipKvLkIx2jg4jtmZu4aC25BY_x0vPy&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-  <script>
-    paypal.Buttons({
-        style: {
-            shape: 'pill',
-            color: 'silver',
-            layout: 'vertical',
-            label: 'subscribe'
-        },
-        createSubscription: function(data, actions) {
-          return actions.subscription.create({
-            'plan_id': 'P-64H356549H398381UMAWCAOA'
-          });
-        },
-        onApprove: function(data, actions) {
-          alert(data.subscriptionID);
-        }
-    }).render('#paypal-button-container');
-  </script>
+<div class="center-container">
+  <div class="start-now-container">
+    <p class="start-now-title">Want to join? Start now!</p>
+    <form class="user-form" action="/start-now">
+      <input class="form-input" type="text" name="name" placeholder="Name *"><br>
+      <input class="form-input" type="text" name="email" placeholder="Email *"><br>
+      <select id="items">
+        <option value="item-1">Standard Package</option>
+        <option value="item-2">Platinum Package</option>
+        <option value="item-3">Full-Mentorship Package</option>
+      </select>
+    </form>
+    <div id="paypal-button-container"></div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AVznN8KV3QGXYA88LymkE-BH1du9GRPtvKsAuTncB1hBpHGAfpipKvLkIx2jg4jtmZu4aC25BY_x0vPy&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+    <script>
+      paypal.Buttons({
+          style: {
+              shape: 'pill',
+              color: 'silver',
+              layout: 'vertical',
+              label: 'subscribe'
+          },
+          createSubscription: function(data, actions) {
+            return actions.subscription.create({
+              'plan_id': 'P-64H356549H398381UMAWCAOA'
+            });
+          },
+          onApprove: function(data, actions) {
+            alert(data.subscriptionID);
+          }
+      }).render('#paypal-button-container');
+    </script>
+  </div>
 </div>
 
 <script src="{{ url_for('static', filename='paypal-payments.js') }}"></script>
