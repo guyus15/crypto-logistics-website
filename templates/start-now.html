@@ -4,10 +4,13 @@
 <div class="start-now-container">
   <p class="start-now-title">Want to join? Start now!</p>
   <form class="user-form" action="/start-now">
-    <input class="form-input" type="text" name="first-name" placeholder="Name *"><br>
+    <input class="form-input" type="text" name="name" placeholder="Name *"><br>
     <input class="form-input" type="text" name="email" placeholder="Email *"><br>
-    <input class="form-input" type="text" name="subject" placeholder="Subject *"><br>
-    <input class="form-input" type="textarea" name="first-name" placeholder="Query *"><br>
+    <select id="items">
+      <option value="item-1">Standard Package</option>
+      <option value="item-2">Platinum Package</option>
+      <option value="item-3">Full-Mentorship Package</option>
+    </select>
     <input type="submit" value="Start Now">
   </form>
 </div>
