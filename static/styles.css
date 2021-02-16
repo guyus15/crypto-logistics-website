@@ -352,3 +352,8 @@ nav {
 .toggle .line3{
   transform: rotate(45deg) translate(-5px, -6px);
 }
+
+#paypal-button-container {
+  margin-top: 1em;
+  width: 25%;
+}
