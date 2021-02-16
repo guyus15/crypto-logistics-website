@@ -1,9 +1,14 @@
 from flask import Flask, render_template, request, redirect
 import smtplib
-from email.message import EmailMessage
+from email.mime.text import MIMEText
 
 email_login = "websitemailer4@gmail.com"
 password = "LogitechTHX"
+
+fp = open("text_file.txt", "rb")
+msg = MIMEText(fp.read())
+fp.close()
+
 
 app = Flask(__name__)
 
@@ -22,16 +27,11 @@ def submit_query():
   subject = request.form['subject']
   query = request.form['query']
 
-  msg = EmailMessage()
-  msg['Subject'] = subject
-  msg['From'] = email_login
-  msg['To'] = 'crypto-logistics@mail.com'
-  msg.set_content("Query from " + name + "\n\n" + query)
+  msg = "Query from " + name + "\n\n" + query
 
   with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-    smtp.login(email_login, password)
-    smtp.send_message(msg)
- 
+    smtp.sendmail(email_login, 'crypto-logistics@mail.com', msg)
+
   return redirect("/")
 
 @app.route('/start-now')
