@@ -19,12 +19,13 @@ body{
 }
 
 #content-wrap{
-  padding-bottom: 2.5rem;
+  height:100%;
+  margin-bottom: 2.5rem;
 }
 
 #footer {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: 100vw;
   height: 2.5rem;
   margin:auto;
@@ -50,7 +51,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  padding: 0 20px 0 20px;
+  padding: 0 1rem 0 1rem;
 }
 
 .nav-brand {
